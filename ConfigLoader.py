@@ -51,7 +51,7 @@ class ConfigurationLoader:
         return self.config, self.strings, self.colors, self.dimens
             
     
-    def LoadDatabaseConfiguration(self):
+    def loadDatabaseConfiguration(self):
         # TODO add database configuration
         pass
             

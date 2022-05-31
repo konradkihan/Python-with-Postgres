@@ -2,7 +2,7 @@ import tkinter as tk
 import json
 
 # custom
-from set_configs import ConfigurationLoader
+from ConfigLoader import ConfigurationLoader
 
 
 
@@ -50,8 +50,8 @@ class MainMenu:
 
         self.master.configure(background=self.colors["primary"])
 
-        self.paddingY = self.dimens["pad_Y"]
-        self.button_width = self.dimens["btn_width_l"]
+        self.paddingY = self.dimens["pad_m"]
+        self.button_width = self.dimens["width_l"]
 
         
         
@@ -124,7 +124,7 @@ class MainMenu:
 if __name__ == "__main__":
     while True:
         mm = MainMenu()
-
+        
         # quit app via clicking X
         if mm.optionValue == 0:
             exit()
