@@ -1,0 +1,13 @@
+{
+    "window":[
+        {
+            "window_Y":"300",
+            "window_X":"300",
+            "resizable_Y": 0,
+            "resizable_X": 0,
+            "language": "EN",
+            "db_credentials": "None"
+            
+        }
+    ]
+}

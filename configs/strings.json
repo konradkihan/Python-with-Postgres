@@ -1,0 +1,41 @@
+{
+    "ENG":[
+        {
+            "app_title":"DB Reader",
+            "confirm": "Confirm",
+            "prev": "Previous",
+            "next": "Next",
+            "submit": "Submit",
+            "cancel": "Cancel",
+            "wokrer_id": "Employee ID",
+            "access_lvl": "Access level",
+
+
+            "cli_id": "Customer ID",
+            "cli_name": "Customer's name",
+            "cli_surname": "Customer's surname",
+
+            "gen_plt": "Generate chart"
+            
+            
+        }
+    ],
+    "POL":[
+        {
+            "app_title":"DB Reader",
+            "confirm": "Potwierdź",
+            "prev": "Wstecz",
+            "next": "Następny",
+            "submit": "Zapisz",
+            "wokrer_id": "ID pracownika",
+            "access_lvl": "Poziom dostępu",
+
+
+            "cli_id": "ID klienta",
+            "cli_name": "Imię klienta",
+            "cli_surname": "Nazwisko klienta"
+
+            
+        }
+    ]
+}
