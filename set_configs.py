@@ -3,7 +3,7 @@ import json
 class ConfigurationLoader:
     def __init__(self, configFile: "path" = None):
         if configFile == None:
-            self.configFile = "./configs/configuration.conf.json"
+            self.configFile = "./configs/configuration.json"
         else:
             self.configFile = configFile
             
@@ -17,43 +17,50 @@ class ConfigurationLoader:
         """
         try:
             with open(self.configFile, "r") as cfg:
-                self.config = json.load(cfg)["window"][0]
-                print(self.config)
+                self.configFile = json.load(cfg)
+                self.config = self.configFile["window"][0]
         except FileNotFoundError as e:
+            # TODO set what to do if configruation.json is not found
             pass
-        except IOError as e:
-            pass
+
         
         try:
             with open(self.lanuageFile) as lang:
-                self.strings = json.load(lang)
-                print(self.strings)
+                self.stringsFile = json.load(lang)
         except FileNotFoundError as e:
-            pass
-        except IOError as e:
+            # TODO set what to do if strings.json is not found
             pass
         
         try:
-            if self.config["language"] == "EN":
-                self.strings = self.strings["ENG"][0]
+            # load languages
+            if self.config["language"] == "ENG":
+                self.strings = self.stringsFile["ENG"][0]
             elif self.config["language"] == "POL":
-                self.strings = self.strings["POL"][0]
+                self.strings = self.stringsFile["POL"][0]
+
+            # load dimens and colors
+            self.colors = self.configFile["colors"][0]
+            self.dimens = self.configFile["dimens"][0]
         except UnboundLocalError as e:
             # TODO Implement error than config was found but no strings file was found
             pass
 
 
-    def LoadWindowConfiguration(self):
-        pass
+    def configReturn(self):
+        self.openFile()
+        return self.config, self.strings, self.colors, self.dimens
             
     
     def LoadDatabaseConfiguration(self):
+        # TODO add database configuration
         pass
             
         
         
 if __name__ == "__main__":
     configLoader = ConfigurationLoader()
-    configRead = configLoader.openFile()
+    configRead = configLoader.configReturn()
+    
+
 
     
