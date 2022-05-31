@@ -1,8 +1,8 @@
 {
     "window":[
         {
-            "window_X":"300",
-            "window_Y":"500",
+            "window_X": 300,
+            "window_Y": 500,
             "resizable_X": 0,
             "resizable_Y": 0,
             "language": "ENG",
@@ -12,14 +12,15 @@
     ],
     "dimens":[
         {
-            "pad_X": 10,
-            "pad_Y": 5,
-            "btn_width_l": 30
+            "pad_l": 10,
+            "pad_m": 5,
+            "width_l": 30
         }
     ],
     "colors":[
         {
-            "primary": "#AAAAAA"
+            "primary": "#AAAAAA",
+            "success": "#009000"
         }
     ]
 }

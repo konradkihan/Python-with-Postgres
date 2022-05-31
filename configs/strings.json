@@ -9,13 +9,20 @@
             "cancel": "Cancel",
             "wokrer_id": "Employee ID",
             "access_lvl": "Access level",
+            "search": "Search",
 
+            "quit_app": "Quit",
 
             "cli_id": "Customer ID",
-            "cli_name": "Customer's name",
-            "cli_surname": "Customer's surname",
+            "cli_name": "Name",
+            "cli_surname": "Surname",
+            "cli_addr": "Address",
 
-            "gen_plt": "Generate chart"
+            "cli_new": "New client",
+            "cli_data": "Client's data",
+            "cli_rem": "Remove client",
+
+            "gen_plt": "Generate report"
             
             
         }
@@ -27,13 +34,22 @@
             "prev": "Wstecz",
             "next": "Następny",
             "submit": "Zapisz",
+            "cancel": "Kasuj",
             "wokrer_id": "ID pracownika",
             "access_lvl": "Poziom dostępu",
 
+            "quit_app": "Wyjdź",
 
             "cli_id": "ID klienta",
             "cli_name": "Imię klienta",
-            "cli_surname": "Nazwisko klienta"
+            "cli_surname": "Nazwisko klienta",
+            "cli_addr": "Address",
+
+            "cli_new": "Nowy klient",
+            "cli_data": "Informacje o kliencie",
+            "cli_rem": "Usuń klienta",
+
+            "gen_plt": "Generuj raport"
 
             
         }
