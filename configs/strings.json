@@ -1,5 +1,5 @@
 {
-    "ENG":[
+    "ENG": [
         {
             "app_title":"DB Reader",
             "confirm": "Confirm",
@@ -7,9 +7,11 @@
             "next": "Next",
             "submit": "Submit",
             "cancel": "Cancel",
-            "wokrer_id": "Employee ID",
+            "worker_id": "Employee ID",
             "access_lvl": "Access level",
             "search": "Search",
+            "usr_not_found": "Client not found",
+            "menu": "Menu",
 
             "quit_app": "Quit",
 
