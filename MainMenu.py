@@ -62,33 +62,33 @@ class MainMenu:
         
 
         # add new client
-        newClientBtn: Button = tk.Button(
+        newClientBtn = tk.Button(
             text=self.strings["cli_new"], 
             command=self.clientNew, 
             pady=self.paddingY, width=self.button_width)
         newClientBtn.pack(pady=self.paddingY)
         # show existing client's data
-        showClientBtn: Button = tk.Button(
+        showClientBtn = tk.Button(
             text=self.strings["cli_data"], 
             command=self.clientShow,
             pady=self.paddingY, width=self.button_width)
         showClientBtn.pack(pady=self.paddingY)
         # remove existing client from database
-        remClientBtn: Button = tk.Button(
+        remClientBtn = tk.Button(
             text=self.strings["cli_rem"], 
             command=self.clientRemove,
             pady=self.paddingY, width=self.button_width)
         remClientBtn.pack(pady=self.paddingY)
 
         # generate report
-        genPltBtn: Button = tk.Button(
+        genPltBtn = tk.Button(
             text=self.strings["gen_plt"], 
             command=self.genPlt,
             pady=self.paddingY, width=self.button_width)
         genPltBtn.pack(pady=self.paddingY*4)
 
         # quit app
-        quitAppBtn: Button = tk.Button(text=self.strings["quit_app"], command=self.quitApp)
+        quitAppBtn = tk.Button(text=self.strings["quit_app"], command=self.quitApp)
         quitAppBtn.pack(pady=self.paddingY*3)
 
         # mainloop window
