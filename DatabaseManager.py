@@ -2,7 +2,7 @@ import psycopg2
 from configparser import ConfigParser
 
 
-class DatabaseConnect:
+class DatabaseManager:
     def __init__(self, filename="./configs/database.ini", section="postgresql"):
         self.filename = filename
         self.section = section
@@ -118,7 +118,7 @@ class DatabaseConnect:
                 conn.close()
         return sku
 
-    def select_customer(self, client_id: int):
+    def select_customer(self, client_id: str):
         query: str = f"""SELECT * FROM clients WHERE client_id = %s"""
         conn = None
         result: None = None
@@ -144,5 +144,34 @@ class DatabaseConnect:
         return result
 
 
+    def removeClient(self, clientId):
+        query: str = f"""DELETE FROM clients WHERE client_id = %s"""
+
+        conn = None
+        clientId = str(clientId)
+
+        try:
+            # read the db configuration
+            params = self.config()
+            # connect to the db
+            conn = psycopg2.connect(**params)
+            # create a new cursor
+            cur = conn.cursor()
+            # execute query
+            cur.execute(query, (clientId,))
+            # commit changes
+            conn.commit()
+            # close communication
+            cur.close()
+
+        except (Exception, psycopg2.DatabaseError) as e:
+            print(e)
+        finally:
+            if conn is not None:
+                conn.close()
+
+
 if __name__ == "__main__":
-    conf = DatabaseConnect()
+    conf = DatabaseManager()
+    print(conf.select_customer("1008"))
+
