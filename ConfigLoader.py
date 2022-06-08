@@ -20,16 +20,14 @@ class ConfigurationLoader:
                 self.configFile = json.load(cfg)
                 self.config = self.configFile["window"][0]
         except FileNotFoundError as e:
-            # TODO set what to do if configruation.json is not found
-            pass
+            exit(f"An error occured: {e}")
 
         
         try:
             with open(self.lanuageFile) as lang:
                 self.stringsFile = json.load(lang)
         except FileNotFoundError as e:
-            # TODO set what to do if strings.json is not found
-            pass
+            exit(f"An error occured: {e}")
         
         try:
             # load languages
@@ -42,19 +40,12 @@ class ConfigurationLoader:
             self.colors = self.configFile["colors"][0]
             self.dimens = self.configFile["dimens"][0]
         except UnboundLocalError as e:
-            # TODO Implement error than config was found but no strings file was found
-            pass
+            exit(f"An error occured: {e}. There is config file but no strings.json file.")
 
 
     def configReturn(self):
         self.openFile()
         return self.config, self.strings, self.colors, self.dimens
-            
-    
-    def loadDatabaseConfiguration(self):
-        # TODO add database configuration
-        pass
-            
         
         
 if __name__ == "__main__":

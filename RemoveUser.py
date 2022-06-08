@@ -21,7 +21,6 @@ class RemoveUser:
         # initatie window configuration and widgets
         self.configuration()
         self.widgets()
-        
 
     def configuration(self):
         """ Apply configuration to a window """
@@ -43,35 +42,33 @@ class RemoveUser:
 
         self.master.configure(background=self.colors["primary"])
 
-
     def widgets(self):
         # easier grid segmentation, intrement after finishing every row
         rowCount = 0 
         
         # input user ID to search in database
-        userIdLabel: Label = tk.Label(
+        userIdLabel = tk.Label(
             text=self.strings["cli_id"] + ": ", 
             pady=self.dimens["pad_l"], padx=self.dimens["pad_m"],
             background=self.colors["primary"])
         userIdLabel.grid(row=rowCount, column=0)
 
-        self.userIdEntry: Entry = tk.Entry(borderwidth=self.dimens["pad_m"], relief=tk.FLAT)
+        self.userIdEntry = tk.Entry(borderwidth=self.dimens["pad_m"], relief=tk.FLAT)
         self.userIdEntry.grid(row=rowCount, column=1)
 
         rowCount +=1
         
-        submitBtn: Button = tk.Button(text=self.strings["confirm"], command=self.onSubmit, padx=self.dimens["pad_m"])
+        submitBtn = tk.Button(text=self.strings["confirm"], command=self.onSubmit, padx=self.dimens["pad_m"])
         submitBtn.grid(row=rowCount, column=0, sticky="nesw")
 
         rowCount +=1
-        
 
         # SPACER
-        spacer = tk.Label(text="", background=self.colors["primary"]).grid(row=rowCount, column=0)
+        tk.Label(text="", background=self.colors["primary"]).grid(row=rowCount, column=0)
         rowCount += 1
 
         # display confirm
-        self.displayUserDataLabel: Label = tk.Label(
+        self.displayUserDataLabel = tk.Label(
             text="", 
             pady=self.dimens["pad_l"], padx=self.dimens["pad_m"],
             background=self.colors["primary"])
@@ -79,16 +76,15 @@ class RemoveUser:
 
         rowCount += 1
 
-        cancelBtn: Button = tk.Button(text=self.strings["cancel"], command=self.onCancel)
+        cancelBtn = tk.Button(text=self.strings["cancel"], command=self.onCancel)
         cancelBtn.grid(row=rowCount, column=0, sticky="nesw")
 
         self.master.mainloop()
 
     def onSubmit(self):
-        self.userIdEntry.get()
-        print(self.userIdEntry.get())
-        # TODO implement user deletion system
+        self.userId = self.userIdEntry.get()
         self.displayUserDataLabel.configure(text="Deleted successfully")
+        self.master.destroy()
 
     def onCancel(self):
         self.master.destroy()
